@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+   <title>TO DO LİST</title>
+
+</head>
+<style>
+*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+body{
+    height: 100vh;
+    background-color: orchid;
+}
+.container{
+    
+    width: 40%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    min-width: 20rem;
+    padding: 2rem 3rem;
+}
+#newtask{
+    background-color: #ffffff;
+    padding: 1.5rem 1rem ;
+    border-radius: 0.5rem;
+    box-shadow:0.1rem 0.1rem 0.1rem;
+}
+#newtask input{
+    width: 70%;
+    height: 2rem;
+    font-size: 1rem; 
+    /* font-family: 'Poppins',sans-serif; */
+    border: 2px solid #d1d3d4;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+    color: #111111;
+    font-weight: 500;
+    position: relative;
+}
+#newtask button{
+    position: relative;
+    float:right;
+    width: 15%;
+    height: 2.7rem;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow:0.1rem 0.1rem 0.1rem black;
+    background-color: slateblue;
+    color: sandybrown;
+}
+#tasks{
+    background-color: #ffffff;
+    max-width: ;
+    margin-top: 1rem;
+    padding: 1.5rem 1rem;
+    /* width:auto; */
+    border-radius: 0.5rem;
+    position: relative;
+    box-shadow:0.1rem 0.1rem 0.1rem;
+}
+.task{
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+.checkbox{
+   
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #d1d3d4;
+}
+.deleter{
+    background-color: slateblue;
+    border-radius: 0.5rem;
+    color: sandybrown;
+    height: 2rem;
+}
+.completed{
+    text-decoration: line-through;
+    color:sandybrown;
+    transform: rotateZ(-3600deg);
+    transition: 0.5s;
+}
+span{
+    text-indent: 1rem;
+    width: 29rem;
+    word-wrap: break-word;
+}
+
+
+
+
+
+
+</style>
+<body>
+    
+    <div class="container">
+        <h1>TO DO LİST</h1>
+        
+        <div id="newtask">
+            <input type="text" placeholder="Enter to-do">
+            <button id="add">Add</button>
+        </div>
+        <div id="tasks"></div>
+    </div>
+
+
+    <script>
+        var data = document.querySelector("#newtask input");
+        var tasks = document.querySelector("#tasks");
+        
+
+         document.querySelector("#add").onclick = function(){
+          if(data.value.length == 0){
+              alert("Please Enter a Task")
+          }
+          else {
+            tasks .innerHTML+=
+          `<div class="task">
+            <div class="checkbox">
+            <input type="checkbox" class="tik">
+            <span id="taskname">${data.value}</span>
+            <button class="deleter"><i class="fas fa-trash-alt"></i></button></div>
+            </div>`; 
+        var deleter =  document.querySelectorAll(".deleter") 
+        
+        deleter.forEach(function(can){
+            can.onclick=function(){
+            this.parentNode.remove();
+           }});
+        }
+        
+        data.value="";
+        
+        var box = document.querySelectorAll(".tik")
+        
+        box.forEach(function(e){
+            e.onclick=function(){
+                this.nextElementSibling.classList.toggle('completed');
+        }});
+
+        }
+
+        
+    </script>
+</body>
+</html>
