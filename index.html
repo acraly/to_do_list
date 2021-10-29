@@ -23,8 +23,7 @@ body{
     background-color: orchid;
 }
 .container{
-    
-    width: 40%;
+    width: 30rem;
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -39,19 +38,16 @@ body{
     box-shadow:0.1rem 0.1rem 0.1rem;
 }
 #newtask input{
-    width: 70%;
+    width: 80%;
     height: 2rem;
     font-size: 1rem; 
-    /* font-family: 'Poppins',sans-serif; */
     border: 2px solid #d1d3d4;
     border-radius: 0.5rem;
     padding: 0.3rem;
     color: #111111;
     font-weight: 500;
-    position: relative;
 }
 #newtask button{
-    position: relative;
     float:right;
     width: 15%;
     height: 2.7rem;
@@ -62,46 +58,44 @@ body{
     color: sandybrown;
 }
 #tasks{
-    background-color: #ffffff;
-    max-width: ;
+    background-color: #FFFFFF;
     margin-top: 1rem;
     padding: 1.5rem 1rem;
-    /* width:auto; */
     border-radius: 0.5rem;
-    position: relative;
     box-shadow:0.1rem 0.1rem 0.1rem;
 }
-.task{
-    /* border: 1px solid red; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    
-    padding: 0.2rem;
-    margin-bottom: 0.5rem;
-}
+
 .checkbox{
-   
     display: flex;
+    justify-content: flex-start;
     align-items: center;
     border-bottom: 2px solid #d1d3d4;
+    position: relative;
+    margin: 0.3rem;
+    padding: 0.3rem;
+    
 }
+
 .deleter{
     background-color: slateblue;
     border-radius: 0.5rem;
-    color: sandybrown;
+    position: absolute;
+    right: 0;
     height: 2rem;
-}
-.completed{
-    text-decoration: line-through;
-    color:sandybrown;
-    transform: rotateZ(-3600deg);
-    transition: 0.5s;
+    color: sandybrown;
+    
 }
 span{
     text-indent: 1rem;
-    width: 29rem;
+    width: 88%;
     word-wrap: break-word;
+} 
+
+.completed{
+    text-decoration: line-through;
+    color:sandybrown;
+    transform: rotateY(-360deg);
+    transition: 0.5s;
 }
 
 
@@ -134,12 +128,13 @@ span{
           }
           else {
             tasks .innerHTML+=
-          `<div class="task">
+          `
             <div class="checkbox">
             <input type="checkbox" class="tik">
             <span id="taskname">${data.value}</span>
-            <button class="deleter"><i class="fas fa-trash-alt"></i></button></div>
-            </div>`; 
+            <button class="deleter"><i class="fas fa-trash-alt"></i></button>
+            </div>
+            `; 
         var deleter =  document.querySelectorAll(".deleter") 
         
         deleter.forEach(function(can){
