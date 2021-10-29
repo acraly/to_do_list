@@ -20,10 +20,9 @@ h1{
 }
 body{
     height: 100vh;
-    background-color: rgb(121, 55, 118);
+    background-color: rgb(177, 74, 190);
 }
 .container{
-   
     width: 30%;
     position: absolute;
     transform: translate(-50%,-50%);
@@ -33,7 +32,6 @@ body{
     padding: 2rem 3rem;
 }
 #newtask{
-    width: 100%;
     background-color: #ffffff;
     padding: 1.5rem 1rem ;
     border-radius: 0.5rem;
@@ -60,8 +58,7 @@ body{
     color: sandybrown;
 }
 #tasks{
-    width: 100%;
-    background-color: #FFFFFF;
+background-color: #FFFFFF;
     margin-top: 1rem;
     padding: 1.5rem 1rem;
     border-radius: 0.5rem;
@@ -76,9 +73,7 @@ body{
     position: relative;
     margin: 0.3rem;
     padding: 0.3rem;
-    
 }
-
 .deleter{
     background-color: slateblue;
     border-radius: 0.5rem;
@@ -86,46 +81,35 @@ body{
     right: 0;
     height: 2rem;
     color: sandybrown;
-    
 }
 span{
     text-indent: 0.7rem;
     width: 85%;
     word-wrap: break-word;
 } 
-
 .completed{
     text-decoration: line-through;
     color:sandybrown;
     transform: rotateY(-360deg);
     transition: 0.5s;
 }
-
-
-
-
-
-
 </style>
 <body>
     
     <div class="container">
         <h1>TO DO LİST</h1>
-        
         <div id="newtask">
             <input type="text" placeholder="Enter to-do">
             <button id="add">Add</button>
         </div>
         <div id="tasks"></div>
     </div>
-
-
     <script>
         var data = document.querySelector("#newtask input");
         var tasks = document.querySelector("#tasks");
         
-
-         document.querySelector("#add").onclick = function(){
+        
+        document.querySelector("#add").onclick = function(){
           if(data.value.length == 0){
               alert("Please Enter a Task")
           }
@@ -157,7 +141,6 @@ span{
 
         }
 
-        
     </script>
 </body>
 </html>
